@@ -27,6 +27,18 @@
     <h4>Total Losses</h4>
     <p id="loss"></p>
 
-    
+<script>
+
+var WinCounter = 0;
+var AttemptsCounter = 0;
+var LossCounter = 0;
+
+    document.onkeyup = function(event) {
+        var userguess = event.key.toLowerCase();
+        document.getElementById("user").innerHTML = userguess;
+
+            var computerChoice = Math.floor((Math.random() * 26) + 1);
+    }
+</script>
 </body>
 </html>
