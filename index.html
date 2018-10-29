@@ -38,6 +38,18 @@ var LossCounter = 0;
         document.getElementById("user").innerHTML = userguess;
 
             var computerChoice = Math.floor((Math.random() * 26) + 1);
+
+            if (computerChoice <= 1) {
+                computerChoice = "a";
+            } else iof(computerChoice <= 2) {
+                computerChoice = "b";
+            } else if(computerChoice <= 3) {
+                computerChoice = "c";
+            } else if(computerChoice <= 4) {
+                computerChoice = "d";
+            } else if(computerChoice <= 5) {
+                computerChoice = "e";
+            }
     }
 </script>
 </body>
