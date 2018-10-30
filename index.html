@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width">
 
     <title>Psychic Game!</title>
+    <style>
+            *{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#0088CC;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#fff;color:#000;}h1{font-family:"Helvetica Neue",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
+         </style>
 </head>
 
 <body>
@@ -92,7 +95,34 @@ var LossCounter = 0;
             } else {
             computerChoice = "z";
             }
-    }
+
+            document.getElementById("computer").innerHTML = computerChoice;
+
+            var compare = function(choice1, choice2) {
+                if (choice1 === choice2) {
+                    document.getElementById("p1").innerHTML = "You win!";
+                    WinCounter++
+                    document.getElementById("win").innerHTML = WinCounter;
+                    AttemptsCounter=0;
+                }
+
+                else {
+                    AttemptsCounter++
+                    document.getElementById("attempts").innerHTML = AttemptsCounter;
+                    document.getElementById("p1").innerHTML = "Guess Again!";
+                }
+            }
+
+            var results = compare(userguess, computerChoice);
+                if(AttemptsCounter>=10) {
+                    LossCounter++
+                    document.getElementById("loss").innerHTML = LossCounter;
+                    document.getElementById("p1").innerHTML = "You Lose!";
+                    AttemptsCounter=0;
+                }
+    };
+
+
 </script>
 </body>
 </html>
